@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="josemarq.booklisting.MainActivity">
+
+    <EditText
+        android:id="@+id/term"
+        android:hint="@string/search_hint"
+        style="@style/search_box" />
+
+    <Button
+        android:id="@+id/search_button"
+        android:text="@string/search_button"
+        style="@style/search_button" />
+
+</LinearLayout>

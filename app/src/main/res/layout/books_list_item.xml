@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/lista">
+
+    <ImageView
+        android:src="@mipmap/ic_launcher"
+        style="@style/imagen" />
+
+    <LinearLayout style="@style/text_holder">
+
+        <TextView
+            android:id="@+id/titulo"
+            tools:text="Long placeholder location that should wrap to more than 2 lines of text"
+            style="@style/titulo" />
+
+        <TextView
+            android:id="@+id/autor"
+            tools:text="Long placeholder location that should wrap to more than 2 lines of text"
+            style="@style/autor" />
+
+        <TextView
+            android:id="@+id/publisher"
+            tools:text="Long placeholder location that should wrap to more than 2 lines of text"
+            style="@style/publisher" />
+
+    </LinearLayout>
+
+</LinearLayout>

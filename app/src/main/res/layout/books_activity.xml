@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/list"
+        style="@style/list_layout" />
+
+    <!-- Empty Layout is only visible when the list has no items. -->
+    <LinearLayout style="@style/error_layout_holder">
+
+        <ImageView
+            android:id="@+id/image_empty"
+            android:src="@android:drawable/ic_delete"
+            style="@style/imagen_error" />
+
+        <TextView
+            android:id="@+id/empty_view"
+            style="@style/text_empty" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/loading_indicator"
+        style="@style/progress_bar" />
+</RelativeLayout>
