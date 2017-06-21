@@ -16,6 +16,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  * Helper methods related to requesting and receiving books form the api.
  */
@@ -204,9 +205,16 @@ public final class QueryUtils {
                 // Extract the value for the link
                 String url = volumeInfo.getString("previewLink");
 
+                //Extract Thumbnail
+                JSONObject imagesInfo = volumeInfo.getJSONObject("imageLinks");
+                String imagenThumb = imagesInfo.getString("smallThumbnail");
+                Log.i("QueryUtils", "Imagen: " + imagenThumb);
+
+
+
                 // Create a new {@link Books} object with the magnitude, location, time,
                 // and url from the JSON response.
-                Books book = new Books(titulo, autor, publisher, url);
+                Books book = new Books(titulo, autor, publisher, url, imagenThumb);
 
                 // Add the new {@link Books} to the list of books.
                 books.add(book);

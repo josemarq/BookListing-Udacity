@@ -16,11 +16,14 @@
 package josemarq.booklisting;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+import com.squareup.picasso.Picasso;
 import java.util.List;
 
 /**
@@ -43,6 +46,7 @@ public class BooksAdapter extends ArrayAdapter<Books> {
         super(context, 0, books);
     }
 
+
     /**
      * Returns a list item view that displays information about the book at the given position
      * in the list of books.
@@ -64,6 +68,7 @@ public class BooksAdapter extends ArrayAdapter<Books> {
         String titulo = currentBooks.getTitulo();
         String publisher = currentBooks.getPublisher();
         String autor = currentBooks.getAutor();
+        String imgenThumb = currentBooks.getImagenThumb();
 
 
         // Find the TextView with view Titulo
@@ -78,6 +83,17 @@ public class BooksAdapter extends ArrayAdapter<Books> {
         TextView publisherView = (TextView) listItemView.findViewById(R.id.publisher);
         // Display the publisher of the current book in that TextView
         publisherView.setText(publisher);
+
+        ImageView imageView = (ImageView) listItemView.findViewById(R.id.imagen_libro);
+
+        //Loading image from below url into imageView using Picasso
+        Log.i("Picasso", imgenThumb);
+
+        Picasso.with(this.getContext())
+                .load(imgenThumb)
+                .placeholder(R.mipmap.ic_launcher)   // optional
+                .error(R.mipmap.ic_launcher)      // optional
+                .into(imageView);
 
         // Return the list item view that is now showing the appropriate data
         return listItemView;

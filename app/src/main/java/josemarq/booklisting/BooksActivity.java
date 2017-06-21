@@ -158,4 +158,16 @@ public class BooksActivity extends AppCompatActivity
         // Loader reset, so we can clear out our existing data.
         mAdapter.clear();
     }
+
+    @Override
+    public void onResume() {
+
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+
+        super.onPause();
+    }
 }

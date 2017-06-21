@@ -4,6 +4,7 @@
     style="@style/lista">
 
     <ImageView
+        android:id="@+id/imagen_libro"
         android:src="@mipmap/ic_launcher"
         style="@style/imagen" />
 
