@@ -15,9 +15,6 @@
  */
 package josemarq.booklisting;
 
-
-import static josemarq.booklisting.R.style.imagen;
-
 /**
  * An {@link Books} object contains information related to a single book.
  */
@@ -26,7 +23,6 @@ public class Books {
     private String mTitulo;
     private String mAutor;
     private String mPublisher;
-    private String mImagenThumb;
 
     /**
      * Website URL of the book
@@ -40,14 +36,12 @@ public class Books {
      * @param autor     is the author of the boook
      * @param publisher is the publisher or the book
      * @param url       is the website URL to find more details about the book
-     * @param imagenThumb    is the website URL to find more details about the book
      */
-    public Books(String titulo, String autor, String publisher, String url, String imagenThumb) {
+    public Books(String titulo, String autor, String publisher, String url) {
         mTitulo = titulo;
         mAutor = autor;
         mPublisher = publisher;
         mUrl = url;
-        mImagenThumb = imagenThumb;
     }
 
     /**
@@ -63,10 +57,6 @@ public class Books {
 
     public String getPublisher() {
         return mPublisher;
-    }
-
-    public String getImagenThumb() {
-        return mImagenThumb;
     }
 
     public String getUrl() {

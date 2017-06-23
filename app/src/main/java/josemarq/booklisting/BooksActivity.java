@@ -1,5 +1,6 @@
 package josemarq.booklisting;
 
+import android.util.Log;
 import android.view.View;
 import android.app.LoaderManager;
 import android.app.LoaderManager.LoaderCallbacks;
@@ -15,15 +16,12 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
 public class BooksActivity extends AppCompatActivity
         implements LoaderCallbacks<List<Books>> {
 
-    //private static final String LOG_TAG = BooksActivity.class.getName();
 
     /**
      * URL for Books data from Google Api now set to get Max 15 results
@@ -51,6 +49,7 @@ public class BooksActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.books_activity);
+        Log.i("BooksActivity", "Create!");
 
         //Get extra from Intent
         Bundle extras = getIntent().getExtras();
@@ -127,12 +126,14 @@ public class BooksActivity extends AppCompatActivity
     @Override
     public Loader<List<Books>> onCreateLoader(int i, Bundle bundle) {
         // Create a new loader for the given URL
+        Log.i("BooksActivity", "Create Loader");
         return new BooksLoader(this, REQUEST_URL);
     }
 
     @Override
     public void onLoadFinished(Loader<List<Books>> loader, List<Books> books) {
         // Hide loading indicator because the data has been loaded
+        Log.i("BooksActivity", "Finish Loader");
         View loadingIndicator = findViewById(R.id.loading_indicator);
         loadingIndicator.setVisibility(View.GONE);
 
@@ -157,6 +158,8 @@ public class BooksActivity extends AppCompatActivity
     public void onLoaderReset(Loader<List<Books>> loader) {
         // Loader reset, so we can clear out our existing data.
         mAdapter.clear();
+        Log.i("BooksActivity", "Reset Loader");
+
     }
 
     @Override

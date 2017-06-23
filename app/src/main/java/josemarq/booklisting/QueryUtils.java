@@ -214,7 +214,7 @@ public final class QueryUtils {
 
                 // Create a new {@link Books} object with the magnitude, location, time,
                 // and url from the JSON response.
-                Books book = new Books(titulo, autor, publisher, url, imagenThumb);
+                Books book = new Books(titulo, autor, publisher, url);
 
                 // Add the new {@link Books} to the list of books.
                 books.add(book);
